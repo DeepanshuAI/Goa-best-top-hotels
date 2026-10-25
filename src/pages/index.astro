@@ -1,16 +1,141 @@
 ---
----
+import Base from '../layouts/Base.astro';
+import HotelRow from '../components/HotelRow.astro';
+import { hotels } from '../data/hotels';
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+const title = '10 Best Hotels in Goa | Goa, Considered';
+const description = 'Explore a curated selection of ten Goa hotels by region, facilities and practical trade-offs. Numbering shows reading order, not an objective ranking.';
+const itemList = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Curated selection of ten Goa hotels — editorial reading order',
+  itemListElement: hotels.map((hotel, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: { '@type': 'Hotel', name: hotel.name },
+  })),
+};
+---
+<Base title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(itemList)} />
+  </Fragment>
+
+  <div class="wrap">
+    <section class="hero">
+      <p class="kicker">A considered guide to Goa stays</p>
+      <h1>10 Best Hotels in Goa</h1>
+      <p class="lead">Ten Goa stays, from beach resorts to city bases. Compare location, verified facilities and practical fit.</p>
+      <div class="intro-note">A curated selection; numbers indicate reading order, not a proven quality rank.</div>
+    </section>
+
+    <section id="hotel-selection">
+      <div class="section-heading">
+        <div>
+          <p class="section-label">The shortlist</p>
+          <h2>Ten Goa stays</h2>
+        </div>
+        <p>Search and filter to narrow the list.</p>
+      </div>
+
+      <div class="toolbar" aria-label="Filter hotel list">
+        <label class="sr-only" for="hotel-search">Search stays</label>
+        <input id="hotel-search" data-search type="search" placeholder="Search hotel, area or feature" />
+        <label class="sr-only" for="region-filter">Filter by region</label>
+        <select id="region-filter" data-region>
+          <option value="">All regions</option>
+          <option>North Goa</option>
+          <option>South Goa</option>
+          <option>Central Goa</option>
+        </select>
+        <label class="sr-only" for="audience-filter">Filter by trip type</label>
+        <select id="audience-filter" data-audience>
+          <option value="">All trip styles</option>
+          <option value="family">Family</option>
+          <option value="couples">Couples</option>
+          <option value="boutique">Boutique</option>
+          <option value="beach-resorts">Beach resort</option>
+        </select>
+        <label class="sr-only" for="sort-stays">Sort stays</label>
+        <select id="sort-stays" data-sort>
+          <option value="order">Editorial order</option>
+          <option value="name">Hotel name</option>
+        </select>
+      </div>
+
+      <div class="tool-status">
+        <span data-result-count>10 stays shown</span>
+        <span>
+          <span data-compare-count>0 selected</span> ·
+          <a data-compare-link href="/compare/">Compare selected</a> (up to 4)
+          <button type="button" class="text-button" data-clear-compare hidden>Clear</button>
+        </span>
+      </div>
+      <p class="tool-feedback" data-compare-feedback aria-live="polite" role="status"></p>
+      <div class="hotel-list" data-hotel-list>
+        {hotels.map((hotel, index) => <HotelRow hotel={hotel} position={index + 1} />)}
+      </div>
+    </section>
+
+    <nav class="contents" aria-label="On this page">
+      <strong>More in this guide:</strong>
+      <a href="#compare">Compare stays</a>
+      <a href="#regions">Choose a region</a>
+      <a href="#method">How we selected</a>
+    </nav>
+
+    <section id="compare" class="content">
+      <h2>Compare before you choose</h2>
+      <p>Select up to four stays above for a focused side-by-side view. Or <a href="/compare/">compare all ten hotels</a> in a compact table.</p>
+    </section>
+
+    <section id="regions" class="content">
+      <p class="section-label">Start with the map</p>
+      <h2>Which part of Goa fits your trip?</h2>
+      <p>These are trip-planning distinctions, not guarantees about every locality. “Central Goa” is an editorial grouping for city and inland stays, not an administrative region. Distances and transport can shape the day, so check a property’s exact setting before booking.</p>
+      <div class="guide-links">
+        <article class="guide-card">
+          <strong>North Goa</strong>
+          <p>Consider it for a mix of popular beaches, restaurants and nightlife. The visitor circuit is varied, but places are spread across several settlements.</p>
+          <a href="/north-goa-hotels/">Explore North Goa stays</a>
+          <a href="/guides/north-goa-vs-south-goa/">North vs South guide</a>
+        </article>
+        <article class="guide-card">
+          <strong>South Goa</strong>
+          <p>A useful starting point for resort-led trips and time around the coast. Beaches and hotels can be far apart, so plan transport between areas.</p>
+          <a href="/south-goa-hotels/">Explore South Goa stays</a>
+          <a href="/guides/north-goa-vs-south-goa/">North vs South guide</a>
+        </article>
+        <article class="guide-card">
+          <strong>Central Goa</strong>
+          <p>May suit a city, heritage or inland itinerary more than a beach-first stay. This shortlist has two distinct central bases, so compare their exact settings.</p>
+          <a href="/central-goa-stays/">Explore central stays</a>
+          <a href="/guides/best-areas-to-stay-in-goa/">Read the area guide</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="method" class="content">
+      <p class="section-label">Editorial approach</p>
+      <h2>Why these ten made the list</h2>
+      <p>We reviewed a broader pool of 21 candidate leads and retained ten where current official property details and a clear traveller use case could be confirmed. Because comparable independent review evidence, like-for-like rates and verified inspection data were not available for every hotel, we do not assign numerical scores or claim an objective ranking. The displayed order is an editorial reading order, not a quality score.</p>
+      <p><a href="/methodology/">See the selection method, candidate notes and limitations.</a></p>
+    </section>
+
+    <section class="content faq">
+      <h2>Frequently asked questions</h2>
+      <details>
+        <summary>Is North Goa or South Goa better for hotels?</summary>
+        <p>Choose North Goa for a busier base near popular beaches, dining and nightlife. Choose South Goa for a resort-oriented stay and a slower beach holiday. The right choice depends on what you want to do most days.</p>
+      </details>
+      <details>
+        <summary>Are these the ten cheapest hotels?</summary>
+        <p>No. This is a research-based shortlist across different property styles, not a budget ranking. We avoid displaying prices because rates vary by date, room and conditions.</p>
+      </details>
+      <details>
+        <summary>Can I book rooms here?</summary>
+        <p>No. This directory has no inventory or booking engine. Each profile links to the official property site so you can verify current rates, availability and terms directly.</p>
+      </details>
+    </section>
+  </div>
+</Base>

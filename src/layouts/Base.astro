@@ -1,0 +1,89 @@
+---
+import '../styles/global.css';
+import { hotels } from '../data/hotels';
+const { title, description, canonical, active = '', noCanonical = false } = Astro.props;
+const canonicalUrl = !noCanonical && import.meta.env.SITE ? new URL(canonical ?? Astro.url.pathname, import.meta.env.SITE).toString() : undefined;
+---
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+    <meta property="og:site_name" content="Goa, Considered" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <slot name="head" />
+  </head>
+  <body data-known-hotels={hotels.map(h => h.slug).join(',')}>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header"><div class="header-inner">
+      <a class="wordmark" href="/" aria-label="Goa, Considered home">goa<span>,</span> considered</a>
+      <nav aria-label="Main navigation">
+        <a href="/north-goa-hotels/" class:list={{current:active==='north'}}>North Goa</a>
+        <a href="/south-goa-hotels/" class:list={{current:active==='south'}}>South Goa</a>
+        <a href="/guides/north-goa-vs-south-goa/">Where to stay</a>
+        <a href="/compare/">Compare</a>
+        <a href="/methodology/">Our method</a>
+      </nav>
+    </div></header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer">
+      <div class="footer-top"><a class="wordmark" href="/">goa<span>,</span> considered</a><p>An independent, research-based guide to choosing a Goa stay.</p></div>
+      <div class="footer-links"><a href="/about/">About</a><a href="/methodology/">Methodology</a><a href="/editorial-policy/">Editorial policy</a><a href="/sources-and-corrections/">Sources &amp; corrections</a><a href="/contact/">Contact</a><a href="/privacy-policy/">Privacy</a><a href="/compare/">Compare stays</a></div>
+      <p class="fine-print">Property details can change. Confirm facilities, location and terms with the hotel before booking. No live rates or availability are shown.</p>
+    </footer>
+    <script>
+      const search = document.querySelector<HTMLInputElement>('[data-search]');
+      const region = document.querySelector<HTMLSelectElement>('[data-region]');
+      const audience = document.querySelector<HTMLSelectElement>('[data-audience]');
+      const sort = document.querySelector<HTMLSelectElement>('[data-sort]');
+      const list = document.querySelector<HTMLElement>('[data-hotel-list]');
+      const count = document.querySelector<HTMLElement>('[data-result-count]');
+      const compareCount = document.querySelector<HTMLElement>('[data-compare-count]');
+      const compareLink = document.querySelector<HTMLAnchorElement>('[data-compare-link]');
+      const feedback = document.querySelector<HTMLElement>('[data-compare-feedback]');
+      const clear = document.querySelector<HTMLButtonElement>('[data-clear-compare]');
+      const cards = [...document.querySelectorAll<HTMLElement>('[data-hotel]')];
+      const filter = () => {
+        const q = search?.value.trim().toLowerCase() ?? '', r = region?.value ?? '', a = audience?.value ?? '';
+        let n = 0;
+        for (const card of cards) {
+          const ok = (!q || card.dataset.searchText?.includes(q)) && (!r || card.dataset.region === r) && (!a || card.dataset.categories?.split(',').includes(a));
+          card.hidden = !ok; if (ok) n++;
+        }
+        if (count) count.textContent = `${n} ${n === 1 ? 'stay' : 'stays'} shown`;
+        if (list) { const ordered = [...cards].sort((x,y) => sort?.value === 'name' ? (x.dataset.name ?? '').localeCompare(y.dataset.name ?? '') : Number(x.dataset.order)-Number(y.dataset.order)); let visiblePosition = 0; ordered.forEach(c => { list.append(c); const marker = c.querySelector<HTMLElement>('.reading-order'); if (marker && c.dataset.position) { if (!c.hidden) visiblePosition++; marker.textContent = c.hidden ? '' : String(visiblePosition).padStart(2,'0'); } }); }
+      };
+      for (const el of [search, region, audience, sort]) el?.addEventListener('input', filter);
+      const key = 'goa-considered-compare';
+      const known = new Set((document.body.dataset.knownHotels ?? '').split(',').filter(Boolean));
+      let selected = new Set<string>();
+      try {
+        const saved = JSON.parse(localStorage.getItem(key) ?? '[]');
+        if (Array.isArray(saved)) selected = new Set(saved.filter((slug): slug is string => typeof slug === 'string' && known.has(slug)).slice(0,4));
+      } catch { selected = new Set(); }
+      const update = () => {
+        document.querySelectorAll<HTMLInputElement>('[data-compare]').forEach(i => i.checked = selected.has(i.value));
+        if (compareCount) compareCount.textContent = `${selected.size} selected`;
+        if (compareLink) compareLink.href = selected.size ? `/compare/?hotels=${[...selected].join(',')}` : '/compare/';
+        if (clear) clear.hidden = selected.size === 0;
+        try { localStorage.setItem(key, JSON.stringify([...selected])); } catch { /* comparison still works for this page view */ }
+      };
+      document.querySelectorAll<HTMLInputElement>('[data-compare]').forEach(i => i.addEventListener('change', () => {
+        if (i.checked && selected.size >= 4) { i.checked = false; if (feedback) feedback.textContent = 'You can compare up to four hotels. Remove one to add another.'; return; }
+        i.checked ? selected.add(i.value) : selected.delete(i.value);
+        if (feedback) feedback.textContent = '';
+        update();
+      }));
+      clear?.addEventListener('click', () => { selected.clear(); if (feedback) feedback.textContent = 'Hotel comparison selection cleared.'; update(); });
+      update();
+    </script>
+  </body>
+</html>

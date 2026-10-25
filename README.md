@@ -1,43 +1,26 @@
-# Astro Starter Kit: Minimal
+# Goa, Considered
 
-```sh
-npm create astro@latest -- --template minimal
+A static editorial hotel discovery directory for Goa. Built with Astro, strict TypeScript, semantic HTML and lightweight CSS.
+
+## Run locally
+
+```powershell
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Build and validate
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```powershell
+npm run check
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+`npm run check` runs Astro diagnostics, builds all static routes, checks hotel profiles and homepage rows, verifies internal links, parses ItemList JSON-LD, and checks sitemap and robots origin when `SITE_URL` is configured.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Production origin
 
-Any static assets, like images, can be placed in the `public/` directory.
+Set `SITE_URL` to the assigned HTTPS production origin. Do not deploy with an invented host. Astro sitemap, canonical metadata and the `robots.txt` sitemap entry use this single value.
 
-## 🧞 Commands
+## Documentation
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+See `docs/seo-research.md`, `docs/topical-map.md`, `docs/ranking-methodology.md`, `docs/content-guidelines.md`, `docs/internal-linking.md`, `docs/backlink-strategy.md`, `docs/deployment.md`, and `docs/launch-checklist.md`.

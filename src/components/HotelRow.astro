@@ -1,0 +1,22 @@
+---
+import type { Hotel } from '../data/hotels';
+const { hotel, position, compact = false, showPosition = true } = Astro.props as { hotel: Hotel; position?: number; compact?: boolean; showPosition?: boolean };
+const searchable = `${hotel.name} ${hotel.locality} ${hotel.region} ${hotel.type} ${hotel.bestFor} ${hotel.rationale} ${hotel.facilities.join(' ')}`.toLowerCase();
+---
+<article class="hotel-row" data-hotel data-order={position ?? 0} data-position={showPosition && position ? position : undefined} data-name={hotel.name} data-region={hotel.region} data-categories={hotel.categories.join(',')} data-search-text={searchable}>
+  <div class="reading-order">{showPosition && position ? String(position).padStart(2, '0') : ''}</div>
+  <img class="hotel-thumb" src={hotel.thumbnail} alt="" width={hotel.thumbnailWidth} height={hotel.thumbnailHeight} loading={position === 1 ? 'eager' : 'lazy'} decoding="async" />
+  <div class="hotel-copy">
+    <p class="eyebrow">{hotel.region} <span aria-hidden="true">/</span> {hotel.locality}</p>
+    <h2><a href={`/hotels/${hotel.slug}/`}>{hotel.name}</a></h2>
+    <p class="rationale">{hotel.rationale}</p>
+    <p class="best-for"><strong>Best for</strong> {hotel.bestFor}</p>
+    <ul class="feature-list">{hotel.facilities.slice(0, 3).map(feature => <li>{feature}</li>)}</ul>
+    {!compact && <p class="tradeoff"><strong>Practical note</strong> {hotel.tradeoff}</p>}
+    <div class="row-actions">
+      <a class="text-link" href={`/hotels/${hotel.slug}/`}>Read the profile <span aria-hidden="true">↗</span></a>
+      <a class="text-link external" href={hotel.officialUrl} target="_blank" rel="noreferrer">Official site <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <label class="compare-choice"><input type="checkbox" data-compare value={hotel.slug} aria-label={`Compare ${hotel.name}`} /><span>Compare</span></label>
+</article>
