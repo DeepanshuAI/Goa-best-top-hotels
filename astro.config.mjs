@@ -1,4 +1,5 @@
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
-const site = process.env.SITE_URL;
-export default defineConfig({ ...(site ? { site } : {}), integrations: site ? [sitemap()] : [], output: 'static' });
+import { site } from './site.config.mjs';
+
+export default defineConfig({ site, integrations: [sitemap({ filter: (page) => !page.endsWith('/404.html') })], output: 'static' });

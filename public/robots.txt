@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-# A sitemap is generated during deployment when SITE_URL is configured.

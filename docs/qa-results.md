@@ -1,5 +1,15 @@
 # QA results
 
+## Sitemap repair — 26 October 2026
+
+- Root cause: `@astrojs/sitemap` (`3.7.4`) was installed but registered only when `SITE_URL` existed. The production build had no `SITE_URL`, so the plugin did not run and `/sitemap-index.xml` returned 404. The old post-build robots script also omitted a Sitemap directive in that case.
+- `npm run check`: passed; Astro reported 0 errors, 0 warnings and 0 hints. The build generated 24 Astro page routes including the 404 page, plus the static robots endpoint; the validator passed.
+- `npm run build`: passed. `dist/sitemap-index.xml`, `dist/sitemap-0.xml` and `dist/robots.txt` were generated.
+- Python's standard XML parser successfully parsed the sitemap index and child sitemap. The child sitemap contains 23 unique URLs on `https://goa-best-hotels.vercel.app`; they match all indexable Astro routes, excluding the 404 route and Google verification HTML file.
+- The validator checks canonical origin, sitemap XML structure, unique sitemap URLs, exact correspondence with indexable static routes, robots directives, head discovery links, canonical tags and Open Graph URLs.
+- Before pushing this repair, a live check of `https://goa-best-hotels.vercel.app/sitemap-index.xml` returned HTTP 404 and live `/robots.txt` showed the old conditional-generation comment. The production deployment and post-deployment HTTP check remain outstanding until Vercel deploys this commit.
+- No Search Console indexing status was inspected; sitemap generation and submission do not establish that Google indexed any page.
+
 ## Current image-ratio and responsive design revision — 25 October 2026
 
 - `npm run check`: passed; Astro reported 0 errors, 0 warnings and 0 hints. The static build generated 24 routes, and `scripts/validate-build.mjs` verified unique titles, descriptions, exactly one H1 per route, no `noindex`, local internal links, local image files, the ten crawlable hotel records, and curated ItemList JSON-LD.
