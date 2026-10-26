@@ -17,7 +17,7 @@ No authenticated Google Search Console session or Search Console integration is 
 
 The live XML sitemap index and child sitemap returned 200 and contain 23 unique URLs on the production origin. Each requested page appears in the child sitemap. The homepage links to the regional hub, guide and comparison; the regional page and guide link to relevant profiles and each other; Compare is in the global navigation and links to all ten profiles.
 
-`/compare` and `/compare/` both returned 200 with no redirect in the observed deployment. The no-slash response still declared `/compare/` as canonical, but allowing both forms is avoidable duplication. Astro is now configured with `trailingSlash: 'always'`, and `vercel.json` sets `trailingSlash: true` so Vercel should 308 redirect `/compare` to `/compare/` (and normalize other extensionless routes). Verify that redirect after the new deployment.
+`/compare` and `/compare/` both returned 200 with no redirect in the original deployment. The no-slash response still declared `/compare/` as canonical, but allowing both forms is avoidable duplication. Astro is configured with `trailingSlash: 'always'`, and `vercel.json` sets `trailingSlash: true`. After deployment, `/compare` returned a permanent 308 to `/compare/`; `/compare/?hotels=itc-grand-goa` remained in the destination query string.
 
 ## Content and indexability decision
 
@@ -41,4 +41,4 @@ Only after confirming a specific issue is fixed, use **Test Live URL** and then 
 
 ## Local validation
 
-`npm run check` and `npm run build` pass for the current source. The sitemap validator checks the exact canonical URL set, unique URLs, XML structure, route canonicals, robots declaration and internal links. Recheck the live redirects and changed page content after Vercel deploys this revision. The exact Search Console indexing outcome remains a manual check.
+`npm run check` and `npm run build` pass for the current source. The sitemap validator checks the exact canonical URL set, unique URLs, XML structure, route canonicals, robots declaration and internal links. After deployment, live HTTP checks returned 200 for the three target pages, sitemap index and child, robots file, homepage, South Goa page and Methodology. All three target pages had a unique title, one H1, self-referencing canonical, no meta `noindex`, and no `X-Robots-Tag` header. The North/South guide table and all 60 comparison cells were present in the returned HTML. The exact Google Search Console indexing outcomes remain a manual check.
