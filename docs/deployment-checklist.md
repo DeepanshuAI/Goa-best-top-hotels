@@ -27,6 +27,6 @@
 ## Current launch blockers
 
 - Photo rights/credits are not recorded for the ten user-supplied files.
-- Confirm that Vercel Production `SITE_URL` is set to the canonical origin and that the deployed sitemap is publicly accessible.
+- Deployed sitemap is verified at the production origin. Optionally set Vercel Production `SITE_URL` explicitly to the same canonical origin as described in `docs/deployment.md`.
 - The prototype has no monitored contact/corrections channel.
 - Confirm live operation and seasonal amenities directly with hotels before launch.

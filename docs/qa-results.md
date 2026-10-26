@@ -7,7 +7,8 @@
 - `npm run build`: passed. `dist/sitemap-index.xml`, `dist/sitemap-0.xml` and `dist/robots.txt` were generated.
 - Python's standard XML parser successfully parsed the sitemap index and child sitemap. The child sitemap contains 23 unique URLs on `https://goa-best-hotels.vercel.app`; they match all indexable Astro routes, excluding the 404 route and Google verification HTML file.
 - The validator checks canonical origin, sitemap XML structure, unique sitemap URLs, exact correspondence with indexable static routes, robots directives, head discovery links, canonical tags and Open Graph URLs.
-- Before pushing this repair, a live check of `https://goa-best-hotels.vercel.app/sitemap-index.xml` returned HTTP 404 and live `/robots.txt` showed the old conditional-generation comment. The production deployment and post-deployment HTTP check remain outstanding until Vercel deploys this commit.
+- Before pushing this repair, a live check of `https://goa-best-hotels.vercel.app/sitemap-index.xml` returned HTTP 404 and live `/robots.txt` showed the old conditional-generation comment. After push/deployment, the sitemap index, child sitemap and robots endpoint all returned HTTP 200. The live index references one child file with 23 unique URLs on the production origin. Live homepage, ITC Grand Goa profile, North Goa guide and comparison page returned HTTP 200 with matching canonical tags.
+- Vercel's environment-variable settings were not directly inspected. The deployed build succeeds with the config fallback; set Production `SITE_URL` explicitly as documented if desired. No Google Search Console indexing status was inspected.
 - No Search Console indexing status was inspected; sitemap generation and submission do not establish that Google indexed any page.
 
 ## Current image-ratio and responsive design revision — 25 October 2026
