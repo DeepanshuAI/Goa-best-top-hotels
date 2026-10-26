@@ -40,6 +40,12 @@ const jsonLd=home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/scrip
 if(!jsonLd) throw new Error('Homepage ItemList JSON-LD missing.');
 const schema=JSON.parse(jsonLd[1]);
 if(schema['@type']!=='ItemList'||!schema.name?.toLowerCase().includes('curated')||schema.itemListElement.length!==10) throw new Error('Homepage structured data does not match the curated visible list.');
+const north=readFileSync(join(root,'north-goa-hotels','index.html'),'utf8');
+if(!north.includes('North Goa areas in this shortlist')||!north.includes('what_to_see/beaches')||!north.includes('/hotels/w-goa-vagator/')) throw new Error('North Goa page is missing distinct regional guidance or a relevant hotel link.');
+const guide=readFileSync(join(root,'guides','north-goa-vs-south-goa','index.html'),'utf8');
+if(!guide.includes('At a glance')||!guide.includes('Decision point')||!guide.includes('/hotels/itc-grand-goa/')||!guide.includes('what_to_see/beaches')) throw new Error('North/South guide comparison or supporting hotel/source links are missing.');
+const compare=readFileSync(join(root,'compare','index.html'),'utf8');
+if((compare.match(/data-compare-hotel=/g)||[]).length!==10||(compare.match(/<td data-label=/g)||[]).length<60||(compare.match(/href="\/hotels\//g)||[]).length<10||!compare.includes('Compare the details that shape a stay')) throw new Error('Comparison page table, profile links, or explanatory content is incomplete.');
 const origin=new URL(site).origin;
 const indexPath=join(root,'sitemap-index.xml');
 if(!existsSync(indexPath)) throw new Error('Sitemap index missing from production build.');
