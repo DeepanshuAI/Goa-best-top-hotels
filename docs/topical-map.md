@@ -11,6 +11,9 @@ Homepage owns the overlapping “best hotels in Goa” and “top 10 hotels in G
 | `/compare/` | compare hotels in Goa | Crawlable comparison table; user-selected subset is client-side only | Published |
 | `/guides/north-goa-vs-south-goa/` | North Goa vs South Goa hotels | Supports regional hubs | Published |
 | `/guides/best-areas-to-stay-in-goa/` | where to stay in Goa; best areas to stay in Goa | Supports region choice and profiles | Published |
+| `/guides/goa-hotel-types/` | Goa resort vs boutique vs city hotel | Compares property scale, source-checked setting and listed-facility trade-offs; no price-category claims | Added in current growth revision |
+| `/guides/before-booking-goa-hotel/` | what to check before booking a Goa hotel | Practical checklist for location, access, current facilities, terms, transport and like-for-like rates | Added in current growth revision |
+| Homepage trip finder | which part of Goa should I stay in | Small client-side guide routes five stated priorities to researched regions/profiles; no extra indexable route | Published on homepage |
 | `/hotels/{slug}/` (10) | property name + Goa | Detailed sourced references linked from every index | Published |
 | `/about/` | site purpose | Trust | Published |
 | `/methodology/` | hotel ranking methodology | Trust; explains curated order | Published |
@@ -23,7 +26,7 @@ Homepage owns the overlapping “best hotels in Goa” and “top 10 hotels in G
 | `/boutique-hotels-in-goa/` | best boutique hotels in Goa | Requires more verified properties and distinct analysis | Not published |
 | `/beach-resorts-in-goa/` | best beach resorts in Goa | Could reuse direct-access details once verified across a broader set | Not published |
 | `/family-hotels-in-goa/` | family hotels in Goa | Requires stronger family amenity/accessibility verification | Not published |
-| `/guides/choosing-a-hotel-in-goa/` | how to choose a Goa hotel | Overlaps area and methodology guides now | Not published |
+| `/guides/choosing-a-hotel-in-goa/` | how to choose a Goa hotel | Overlaps the area and pre-booking checklist guides | Not published |
 | `/guides/goa-hotel-stays-by-travel-style/` | Goa hotel by travel style | Reassess after more varied midrange inventory is researched | Not published |
 | `/hotels-near-{beach}/` | hotels near a named beach | Avoid thin near-duplicate/doorway pages; no standalone pages planned | Not published |
 

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1500" viewBox="0 0 1000 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Seven things to check before booking a Goa hotel</title>
+  <desc id="desc">A saveable Goa hotel checklist covering exact area, beach access, facilities, room terms, transport, cancellation, and comparable prices.</desc>
+  <rect width="1000" height="1500" fill="#f7f5ef"/>
+  <rect width="1000" height="430" fill="#315c4f"/>
+  <circle cx="810" cy="160" r="108" fill="#d5a87f"/>
+  <path d="M0 355c210-55 344 47 520 0s300-45 480 2v73H0z" fill="#23483e"/>
+  <text x="78" y="90" fill="#e0e9e1" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5">GOA, CONSIDERED</text>
+  <text x="78" y="205" fill="#fffefa" font-family="Georgia, serif" font-size="67" letter-spacing="-3">Before you book</text>
+  <text x="78" y="292" fill="#fffefa" font-family="Georgia, serif" font-size="67" letter-spacing="-3">a Goa hotel</text>
+  <text x="82" y="355" fill="#e0e9e1" font-family="Arial, sans-serif" font-size="24">Seven checks to make before you pay</text>
+  <g font-family="Arial, sans-serif" fill="#172c39">
+    <circle cx="105" cy="520" r="24" fill="#e8c8a3"/><text x="105" y="528" text-anchor="middle" font-size="20" font-weight="700">1</text><text x="155" y="529" font-size="28" font-weight="700">Exact area and address</text>
+    <path d="M155 557H900" stroke="#d9ddd5" stroke-width="2"/>
+    <circle cx="105" cy="645" r="24" fill="#e8c8a3"/><text x="105" y="653" text-anchor="middle" font-size="20" font-weight="700">2</text><text x="155" y="654" font-size="28" font-weight="700">Direct beach access or shuttle?</text>
+    <path d="M155 682H900" stroke="#d9ddd5" stroke-width="2"/>
+    <circle cx="105" cy="770" r="24" fill="#e8c8a3"/><text x="105" y="778" text-anchor="middle" font-size="20" font-weight="700">3</text><text x="155" y="779" font-size="28" font-weight="700">Facilities open on your dates</text>
+    <path d="M155 807H900" stroke="#d9ddd5" stroke-width="2"/>
+    <circle cx="105" cy="895" r="24" fill="#e8c8a3"/><text x="105" y="903" text-anchor="middle" font-size="20" font-weight="700">4</text><text x="155" y="904" font-size="28" font-weight="700">Room, meals and inclusions</text>
+    <path d="M155 932H900" stroke="#d9ddd5" stroke-width="2"/>
+    <circle cx="105" cy="1020" r="24" fill="#e8c8a3"/><text x="105" y="1028" text-anchor="middle" font-size="20" font-weight="700">5</text><text x="155" y="1029" font-size="28" font-weight="700">Airport and local transport</text>
+    <path d="M155 1057H900" stroke="#d9ddd5" stroke-width="2"/>
+    <circle cx="105" cy="1145" r="24" fill="#e8c8a3"/><text x="105" y="1153" text-anchor="middle" font-size="20" font-weight="700">6</text><text x="155" y="1154" font-size="28" font-weight="700">Cancellation and payment terms</text>
+    <path d="M155 1182H900" stroke="#d9ddd5" stroke-width="2"/>
+    <circle cx="105" cy="1270" r="24" fill="#e8c8a3"/><text x="105" y="1278" text-anchor="middle" font-size="20" font-weight="700">7</text><text x="155" y="1279" font-size="28" font-weight="700">Compare like-for-like total prices</text>
+  </g>
+  <text x="78" y="1385" fill="#315c4f" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="1">SAVE THIS LIST · READ THE FULL CHECKLIST</text>
+  <text x="920" y="1385" text-anchor="end" fill="#52645f" font-family="Arial, sans-serif" font-size="18">03 / 03</text>
+</svg>

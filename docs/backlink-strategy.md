@@ -2,6 +2,8 @@
 
 There are no claimed backlinks, partnerships or endorsements. Outreach should follow publication and factual review of useful resources.
 
+Current resources prepared for organic sharing include a source-linked regional comparison, a property-style guide, a seven-point pre-booking checklist, and three original Pinterest-size graphics described in `docs/social-distribution.md`. Share the relevant guide in context; do not imply that any publisher or tourism body endorses the directory.
+
 1. Offer the original, source-linked comparison table and region explanation to Goa-focused travel writers who need a concise way to explain property differences.
 2. Share the documented methodology and annual source check with local tourism, hospitality education and visitor-information organizations as a reference, without requesting followed links or implying endorsement.
 3. Pitch useful regional planning material to credible local publications: how the North/South choice changes a trip, and what “direct beach access” versus shuttle access means in practice.

@@ -7,7 +7,7 @@ const files=[];
 const walk=d=>{for(const e of readdirSync(d,{withFileTypes:true})){const p=join(d,e.name);e.isDirectory()?walk(p):files.push(p);}};
 walk(root);
 const html=files.filter(f=>f.endsWith('.html')&&!f.endsWith('googlec5446dfb6f035a7e.html'));
-if(html.length!==24) throw new Error(`Expected 24 static HTML routes, found ${html.length}.`);
+if(html.length!==26) throw new Error(`Expected 26 static HTML routes, found ${html.length}.`);
 const paths=html.map(f=>f.slice(root.length).replaceAll('\\','/'));
 for(const slug of ['itc-grand-goa','taj-fort-aguada-goa','ahilya-by-the-sea','taj-exotica-goa','alila-diwa-goa','courtyard-by-marriott-goa-colva','w-goa-vagator','calangute-residency','amrapali-house-of-grace','panaji-residency']) if(!paths.some(p=>p.includes(`/hotels/${slug}/`))) throw new Error(`Missing profile: ${slug}`);
 const titles=new Map();

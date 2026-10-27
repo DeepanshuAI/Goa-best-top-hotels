@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1500" viewBox="0 0 1000 1500" role="img" aria-labelledby="title desc">
+  <title id="title">What different types of Goa hotels offer</title>
+  <desc id="desc">A Goa, Considered guide to resort-scale stays, small independent hotels, and city residencies.</desc>
+  <rect width="1000" height="1500" fill="#172c39"/>
+  <circle cx="855" cy="195" r="118" fill="#a7653d"/>
+  <circle cx="855" cy="195" r="85" fill="none" stroke="#f0d6bd" stroke-width="2" opacity=".8"/>
+  <text x="78" y="95" fill="#dce9df" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5">GOA, CONSIDERED</text>
+  <text x="78" y="152" fill="#c6d4ca" font-family="Arial, sans-serif" font-size="20" letter-spacing="3">A HOTEL IS MORE THAN A ROOM RATE</text>
+  <text x="78" y="310" fill="#fffefa" font-family="Georgia, serif" font-size="77" letter-spacing="-3">Choose a stay</text>
+  <text x="78" y="398" fill="#fffefa" font-family="Georgia, serif" font-size="77" letter-spacing="-3">style that fits.</text>
+  <text x="82" y="462" fill="#d9e2dc" font-family="Arial, sans-serif" font-size="24">Compare setting, scale and the details you will use.</text>
+  <rect x="78" y="550" width="844" height="205" rx="8" fill="#f7f5ef"/>
+  <rect x="78" y="550" width="12" height="205" fill="#a7653d"/>
+  <circle cx="150" cy="650" r="34" fill="#e8c8a3"/>
+  <path d="M150 597v-18M150 721v-18M97 650H79M221 650h-18M113 613l-13-13M200 700l-13-13M187 613l13-13M100 700l13-13" stroke="#a7653d" stroke-width="4"/>
+  <text x="220" y="618" fill="#315c4f" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="3">RESORT-SCALE</text>
+  <text x="220" y="670" fill="#172c39" font-family="Georgia, serif" font-size="33">Facilities on site</text>
+  <text x="220" y="715" fill="#52645f" font-family="Arial, sans-serif" font-size="21">Check beach access, scale and what you’ll use.</text>
+  <rect x="78" y="790" width="844" height="205" rx="8" fill="#f7f5ef"/>
+  <rect x="78" y="790" width="12" height="205" fill="#315c4f"/>
+  <path d="M116 895c0-29 22-52 50-52s50 23 50 52v44h-100z" fill="#9caf9f"/>
+  <circle cx="166" cy="866" r="15" fill="#f7f5ef"/>
+  <text x="250" y="858" fill="#315c4f" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="3">SMALL INDEPENDENT</text>
+  <text x="250" y="910" fill="#172c39" font-family="Georgia, serif" font-size="33">A more intimate scale</text>
+  <text x="250" y="955" fill="#52645f" font-family="Arial, sans-serif" font-size="21">Compare locality and the listed facilities.</text>
+  <rect x="78" y="1030" width="844" height="205" rx="8" fill="#f7f5ef"/>
+  <rect x="78" y="1030" width="12" height="205" fill="#667b83"/>
+  <rect x="125" y="1090" width="82" height="92" rx="4" fill="#cbd8d1"/>
+  <path d="M140 1109h52M140 1129h52M140 1149h52M140 1169h35" stroke="#315c4f" stroke-width="5"/>
+  <text x="250" y="1098" fill="#315c4f" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="3">CITY &amp; TOURISM RESIDENCIES</text>
+  <text x="250" y="1150" fill="#172c39" font-family="Georgia, serif" font-size="33">A different kind of base</text>
+  <text x="250" y="1195" fill="#52645f" font-family="Arial, sans-serif" font-size="21">Check the exact room and service information.</text>
+  <text x="78" y="1308" fill="#dce9df" font-family="Arial, sans-serif" font-size="23" font-weight="700">See property examples and practical trade-offs →</text>
+  <text x="78" y="1405" fill="#9caf9f" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="2">GOA-BEST-HOTELS.VERCEL.APP</text>
+  <text x="920" y="1405" text-anchor="end" fill="#c6d4ca" font-family="Arial, sans-serif" font-size="18">02 / 03</text>
+</svg>

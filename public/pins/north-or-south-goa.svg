@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1500" viewBox="0 0 1000 1500" role="img" aria-labelledby="title desc">
+  <title id="title">North or South Goa? Choose the base around your trip</title>
+  <desc id="desc">A Goa, Considered travel-planning pin comparing North and South Goa by hotel location and beach access.</desc>
+  <rect width="1000" height="1500" fill="#f7f5ef"/>
+  <path d="M0 1010 C190 940 310 1040 500 980 C690 920 830 960 1000 880 L1000 1500 L0 1500Z" fill="#e3e8df"/>
+  <path d="M0 1150 C180 1080 350 1180 530 1120 C720 1055 850 1110 1000 1045" fill="none" stroke="#9caf9f" stroke-width="5"/>
+  <circle cx="820" cy="290" r="130" fill="#e8c8a3" opacity=".62"/>
+  <circle cx="820" cy="290" r="95" fill="none" stroke="#a7653d" stroke-width="2" opacity=".6"/>
+  <text x="78" y="95" fill="#315c4f" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5">GOA, CONSIDERED</text>
+  <text x="78" y="146" fill="#52645f" font-family="Arial, sans-serif" font-size="18" letter-spacing="3">A FIELD GUIDE TO CHOOSING YOUR BASE</text>
+  <text x="78" y="330" fill="#172c39" font-family="Georgia, serif" font-size="96" letter-spacing="-5">North or</text>
+  <text x="78" y="438" fill="#172c39" font-family="Georgia, serif" font-size="112" letter-spacing="-6">South Goa?</text>
+  <text x="82" y="495" fill="#52645f" font-family="Arial, sans-serif" font-size="27">Start with the trip you want, then compare the stay.</text>
+  <rect x="78" y="600" width="405" height="300" rx="10" fill="#315c4f"/>
+  <text x="112" y="665" fill="#dce9df" font-family="Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="3">NORTH GOA</text>
+  <text x="112" y="735" fill="#fffefa" font-family="Georgia, serif" font-size="34">A varied set of bases</text>
+  <text x="112" y="795" fill="#f1f4ed" font-family="Arial, sans-serif" font-size="22">Vagator · Nerul · Calangute</text>
+  <text x="112" y="837" fill="#f1f4ed" font-family="Arial, sans-serif" font-size="22">Sinquerim-Candolim</text>
+  <rect x="517" y="600" width="405" height="300" rx="10" fill="#a7653d"/>
+  <text x="551" y="665" fill="#f5e6d9" font-family="Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="3">SOUTH GOA</text>
+  <text x="551" y="735" fill="#fffefa" font-family="Georgia, serif" font-size="42">Resort-led options</text>
+  <text x="551" y="795" fill="#fff5ec" font-family="Arial, sans-serif" font-size="22">Arossim · Majorda · Colva</text>
+  <text x="551" y="837" fill="#fff5ec" font-family="Arial, sans-serif" font-size="22">Benaulim</text>
+  <rect x="78" y="960" width="844" height="2" fill="#cbd2ca"/>
+  <text x="78" y="1035" fill="#172c39" font-family="Georgia, serif" font-size="40">One useful question</text>
+  <text x="78" y="1090" fill="#354b44" font-family="Arial, sans-serif" font-size="24">Is beach access direct, by shuttle, or a trip from your hotel?</text>
+  <text x="78" y="1180" fill="#315c4f" font-family="Arial, sans-serif" font-size="25" font-weight="700">Compare real locations and trade-offs →</text>
+  <text x="78" y="1260" fill="#52645f" font-family="Arial, sans-serif" font-size="19">A curated guide · Not an objective hotel ranking</text>
+  <text x="78" y="1395" fill="#315c4f" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="2">GOA-BEST-HOTELS.VERCEL.APP</text>
+  <text x="920" y="1395" text-anchor="end" fill="#52645f" font-family="Arial, sans-serif" font-size="18">01 / 03</text>
+</svg>

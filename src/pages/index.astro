@@ -3,8 +3,8 @@ import Base from '../layouts/Base.astro';
 import HotelRow from '../components/HotelRow.astro';
 import { hotels } from '../data/hotels';
 
-const title = '10 Best Hotels in Goa | Goa, Considered';
-const description = 'Explore a curated selection of ten Goa hotels by region, facilities and practical trade-offs. Numbering shows reading order, not an objective ranking.';
+const title = 'Best Hotels in Goa: 10 Stays to Compare | Goa, Considered';
+const description = 'Compare 10 curated Goa stays across North, South and Central Goa by location, listed facilities, trip fit and practical trade-offs.';
 const itemList = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
@@ -26,7 +26,7 @@ const itemList = {
     <section class="hero">
       <p class="kicker">A considered guide to Goa stays</p>
       <h1>10 Best Hotels in Goa</h1>
-      <p class="lead">Ten Goa stays, from beach resorts to city bases. Compare location, verified facilities and practical fit.</p>
+      <p class="lead">Ten Goa stays, from beach resorts to city bases. Compare location, listed facilities, trip fit and practical trade-offs.</p>
       <div class="intro-note">A curated selection; numbers indicate reading order, not a proven quality rank.</div>
     </section>
 
@@ -82,6 +82,7 @@ const itemList = {
       <strong>More in this guide:</strong>
       <a href="#compare">Compare stays</a>
       <a href="#regions">Choose a region</a>
+      <a href="#trip-finder">Find a base</a>
       <a href="#method">How we selected</a>
     </nav>
 
@@ -116,6 +117,69 @@ const itemList = {
       </div>
     </section>
 
+    <section id="trip-finder" class="content trip-finder">
+      <p class="section-label">A starting point, not a ranking</p>
+      <h2>Which part of Goa should you stay in?</h2>
+      <p>Choose the main thing you want from the trip. The suggestions below use the locations and facilities in our researched shortlist; check each profile for its source and practical limitations.</p>
+      <form data-area-finder>
+        <fieldset class="finder-options">
+          <legend>What matters most on this trip?</legend>
+          <label><input type="radio" name="trip-fit" value="beach" /> Beach access</label>
+          <label><input type="radio" name="trip-fit" value="nightlife" /> North Goa restaurants and nightlife</label>
+          <label><input type="radio" name="trip-fit" value="small" /> A smaller-scale stay</label>
+          <label><input type="radio" name="trip-fit" value="family" /> Family facilities</label>
+          <label><input type="radio" name="trip-fit" value="culture" /> A city or culture-led base</label>
+        </fieldset>
+        <button class="finder-reset" type="reset">Clear choice</button>
+      </form>
+      <p class="finder-prompt" data-finder-prompt role="status" aria-live="polite">Select one priority to see relevant areas and properties.</p>
+      <div class="finder-results" data-finder-results aria-live="polite">
+        <article data-finder-result="beach" hidden>
+          <h3>Compare the exact kind of beach access</h3>
+          <p>North and South both have distinct coastal bases. <a href="/hotels/taj-fort-aguada-goa/">Taj Fort Aguada</a> and <a href="/hotels/itc-grand-goa/">ITC Grand Goa</a> list direct beach access; <a href="/hotels/alila-diwa-goa/">Alila Diwa Goa</a> lists a shuttle to Gonsua Beach. Read the <a href="/guides/north-goa-vs-south-goa/">North vs South guide</a> before choosing.</p>
+        </article>
+        <article data-finder-result="nightlife" hidden>
+          <h3>Start with the North Goa bases</h3>
+          <p>The North Goa shortlist covers Vagator, Calangute, Nerul and Sinquerim-Candolim. <a href="/hotels/w-goa-vagator/">W Goa</a> is in Vagator and lists several dining venues; check current events, hours and transport for your dates. <a href="/north-goa-hotels/">Browse the North Goa stays</a>.</p>
+        </article>
+        <article data-finder-result="small" hidden>
+          <h3>Look at scale as well as setting</h3>
+          <p><a href="/hotels/ahilya-by-the-sea/">Ahilya by the Sea</a> describes nine rooms across three villas in Nerul. <a href="/hotels/amrapali-house-of-grace/">Amrapali • House of Grace</a> is an independent stay in Goa Velha, away from the beachfront resort strip.</p>
+        </article>
+        <article data-finder-result="family" hidden>
+          <h3>Compare the facilities you will actually use</h3>
+          <p><a href="/hotels/itc-grand-goa/">ITC Grand Goa</a> lists a children’s play zone, <a href="/hotels/alila-diwa-goa/">Alila Diwa Goa</a> lists a kids’ club and teen zone, and <a href="/hotels/taj-fort-aguada-goa/">Taj Fort Aguada</a> lists a kids’ activity centre. Confirm current operation and age suitability with the hotel.</p>
+        </article>
+        <article data-finder-result="culture" hidden>
+          <h3>Consider a central base</h3>
+          <p><a href="/hotels/panaji-residency/">Panaji Residency</a> is a city stay behind the Old Secretariat; <a href="/hotels/amrapali-house-of-grace/">Amrapali • House of Grace</a> is a riverside property in Goa Velha and is not beachfront. Explore <a href="/central-goa-stays/">central Goa stays</a> for this different itinerary.</p>
+        </article>
+      </div>
+      <noscript><p>The finder needs JavaScript. You can still use the <a href="/guides/best-areas-to-stay-in-goa/">area guide</a> and compare the linked hotel profiles.</p></noscript>
+    </section>
+
+    <section class="content planning-guides">
+      <p class="section-label">Useful before you book</p>
+      <h2>Compare the stay, then check the details</h2>
+      <div class="guide-links">
+        <article class="guide-card">
+          <strong>What different hotel styles offer</strong>
+          <p>Compare resort-scale properties, small independent stays and city residencies by setting and facilities.</p>
+          <a href="/guides/goa-hotel-types/">Compare Goa hotel types</a>
+        </article>
+        <article class="guide-card">
+          <strong>Seven checks before booking</strong>
+          <p>Use a practical checklist for location, beach access, room terms, transport and current amenities.</p>
+          <a href="/guides/before-booking-goa-hotel/">Read the booking checklist</a>
+        </article>
+        <article class="guide-card">
+          <strong>Save a visual trip-planning guide</strong>
+          <p>Download an original, photo-free pin graphic for the North/South decision and share it with a travel companion.</p>
+          <a href="/pins/north-or-south-goa.png" download>Download the North vs South pin</a>
+        </article>
+      </div>
+    </section>
+
     <section id="method" class="content">
       <p class="section-label">Editorial approach</p>
       <h2>Why these ten made the list</h2>
@@ -139,4 +203,24 @@ const itemList = {
       </details>
     </section>
   </div>
+  <script>
+    const finder = document.querySelector<HTMLFormElement>('[data-area-finder]');
+    const finderPrompt = document.querySelector<HTMLElement>('[data-finder-prompt]');
+    const finderResults = [...document.querySelectorAll<HTMLElement>('[data-finder-result]')];
+    const showFinderResult = () => {
+      const selected = finder?.querySelector<HTMLInputElement>('input[name="trip-fit"]:checked')?.value;
+      let found = false;
+      for (const result of finderResults) {
+        const visible = result.dataset.finderResult === selected;
+        result.hidden = !visible;
+        found ||= visible;
+      }
+      if (finderPrompt) {
+        finderPrompt.hidden = found;
+        finderPrompt.textContent = selected ? '' : 'Select one priority to see relevant areas and properties.';
+      }
+    };
+    finder?.addEventListener('change', showFinderResult);
+    finder?.addEventListener('reset', () => requestAnimationFrame(showFinderResult));
+  </script>
 </Base>
